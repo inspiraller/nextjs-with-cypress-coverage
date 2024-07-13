@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pree2e": "rm -rf .nyc_output coverage .next || true",
-    "e2e": "cypress run --component --headless && npx nyc report --reporter=text-summary"
+    "nobabel": "node scripts/babel/backup.js",
+    "dev": "npm run nobabel && next dev",
+    "build": "npm run nobabel && next build",
+    "clear-coverage": "rm -rf .nyc_output coverage .next || true ",
+    "restore-babel": "node scripts/babel/restore.js",
+    "e2e": "npm run clear-coverage && npm run restore-babel && cypress run --component --headless && npx nyc report --reporter=text-summary"
   },
   "dependencies": {
     "next": "14.2.4",

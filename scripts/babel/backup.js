@@ -3,7 +3,7 @@ const path = require("path");
 
 async function renameBabelFileToBackup() {
   const projectRoot = path.join(__dirname, "../..");
-  const babelRcPath = path.join(projectRoot, ".babelrc.js");
+  const babelRcPath = path.join(projectRoot, ".babelrc");
   const babelBackupPath = path.join(projectRoot, ".babel_");
 
   try {
