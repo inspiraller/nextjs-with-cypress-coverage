@@ -1,4 +1,9 @@
 /// <reference types="cypress" />
+
+/// <reference types="cypress" />
+import { mount } from "cypress/react18";
+
+
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
@@ -8,7 +13,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
-//
+
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
@@ -35,3 +40,14 @@
 //     }
 //   }
 // }
+
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      mount: typeof mount;
+    }
+  }
+}
+
+Cypress.Commands.add("mount", mount);

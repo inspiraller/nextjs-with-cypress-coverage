@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+
+  "compilerOptions": {
+    "baseUrl": "..",
+    "rootDir": "../",
+    "lib": ["es5", "dom", "dom.iterable", "esnext"],
+    "types": ["cypress", "node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "includes": ["**/*.ts", "cypress/**/*.js"]
+}

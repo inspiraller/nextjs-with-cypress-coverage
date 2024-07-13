@@ -1,9 +1,10 @@
+/// <reference types="cypress" />
 import React from 'react'
-import { Button } from './Button'
+import {Button} from '../../src/component/Button';
 
 describe('<Button />', () => {
   it('renders', () => {
     // see: https://on.cypress.io/mounting-react
-    cy.mount(<Button />)
+    cy.mount(<Button >dd</Button>)
   })
 })
